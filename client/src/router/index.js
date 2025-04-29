@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { navigationGuard } from '@okta/okta-vue'
 import Todos from '@/components/Todos';
 import Home from '@/components/Home';
-import { LoginCallback } from '@okta/okta-vue'
 
 const routes = [
     {
@@ -16,7 +14,6 @@ const routes = [
             requiresAuth: true
         }
     },
-    { path: '/callback', component: LoginCallback },
 ]
 
 const router = createRouter({
@@ -24,6 +21,6 @@ const router = createRouter({
     routes,
 })
 
-router.beforeEach(navigationGuard)
+// router.beforeEach(navigationGuard)
 
 export default router
